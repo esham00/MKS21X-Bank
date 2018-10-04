@@ -10,8 +10,11 @@ public class BankAccount {
 	public double getBalance() {
 		return balance;
 	}
-	public int accountID() {
+	public int getAccountID() {
 		return accountID;
+	}
+	public String getPassword() {
+		return password;
 	}
 	public void setPassword(String newPass) {
 		password = newPass;
