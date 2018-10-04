@@ -2,7 +2,7 @@ public class BankAccount {
 	private double balance;
 	private int accountID;
 	private String password;
-	public BankAccount(int ID, double money, String pass) {
+	public BankAccount(double money, int ID, String pass) {
 		accountID = ID;
 		balance = money;
 		password = pass;
