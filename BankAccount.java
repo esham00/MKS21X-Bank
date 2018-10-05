@@ -40,4 +40,25 @@ public class BankAccount {
 			return false;
 		}
 	}
+	private boolean authenticate(String pass) {
+		if (password == pass) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	public boolean transferTo(BankAccount other, double amount, String password) {
+		if (this.authenticate(password)) {
+			if (this.withdraw(amount) && this.deposit(amount)) {
+				this.balance -= amount;
+				other.balance += amount;
+				return true;
+			}
+			else {
+				return false;
+			}
+		}
+		else {return false;}
+	}
 }

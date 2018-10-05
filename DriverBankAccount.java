@@ -33,8 +33,48 @@ public class DriverBankAccount{
       System.out.println();
       cashAmount *= 2;
     }
+    System.out.println("Testing depositing from one bank account to another");
+    //fail
+    double Money = 100.29;
+    if (b2.transferTo(b1, Money, "abc123")) {
+      System.out.println("Success: Deposited " + Money + " from b2 to b1");
+      System.out.println("b1's balance: " + b1.getBalance() + "\nb2's balance: " + b2.getBalance());
+    }
+    else {
+      System.out.println ("Failed");
+      System.out.println("b1's balance: " + b1.getBalance() + "\nb2's balance: " + b2.getBalance());
+    }
+    //succeed
+    if (b2.transferTo(b1, Money, "abcasdg23")) {
+      System.out.println("Success");
+      System.out.println("Deposited " + Money + " from b2 to b1");
+      System.out.println("b1's balance: " + b1.getBalance() + "\nb2's balance: " + b2.getBalance());
+    }
+    else {
+      System.out.println ("Failed");
+      System.out.println("b1's balance: " + b1.getBalance() + "\nb2's balance: " + b2.getBalance());
+    }
+    //fail
+    Money = 2301283;
+    if (b2.transferTo(b1, Money, "abcasdg23")) {
+      System.out.println("Success");
+      System.out.println("Deposited " + Money + " from b2 to b1");
+      System.out.println("b1's balance: " + b1.getBalance() + "\nb2's balance: " + b2.getBalance());
+    }
+    else {
+      System.out.println ("Failed");
+      System.out.println("b1's balance: " + b1.getBalance() + "\nb2's balance: " + b2.getBalance());
+    }
+    //fail
+    Money = -10;
+    if (b2.transferTo(b1, Money, "abcasdg23")) {
+      System.out.println("Success");
+      System.out.println("Deposited " + Money + " from b2 to b1");
+      System.out.println("b1's balance: " + b1.getBalance() + "\nb2's balance: " + b2.getBalance());
+    }
+    else {
+      System.out.println ("Failed");
+      System.out.println("b1's balance: " + b1.getBalance() + "\nb2's balance: " + b2.getBalance());
+    }
   }
 }
-
-
-
